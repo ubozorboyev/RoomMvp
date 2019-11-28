@@ -24,7 +24,6 @@ abstract class UserRoom :RoomDatabase(){
                     .build()
             }
         }
-
         fun getInstanse()= database
     }
 }

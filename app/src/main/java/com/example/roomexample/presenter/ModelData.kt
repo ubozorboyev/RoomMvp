@@ -1,12 +1,16 @@
-package com.example.roomexample.room
+package com.example.roomexample.presenter
 
 import android.os.Handler
 import androidx.lifecycle.LiveData
+import com.example.roomexample.room.UserDao
+import com.example.roomexample.room.UserData
+import com.example.roomexample.room.UserRoom
+import com.example.roomexample.room.ioThrets
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class ModelData:UserDao {
-private val database=UserRoom.getInstanse()
+class ModelData: UserDao {
+private val database= UserRoom.getInstanse()
 private val userDao=database.getUserDao()
 
 
@@ -30,7 +34,7 @@ private val userDao=database.getUserDao()
             return userDao.getUserBYId(user_id)
     }
 
-    override fun finsByName(firsName: String, lastName: String) :UserData {
+    override fun finsByName(firsName: String, lastName: String) : UserData {
         return userDao.finsByName(firsName,lastName)
     }
 
